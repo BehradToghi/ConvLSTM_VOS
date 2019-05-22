@@ -16,18 +16,9 @@ from utils import data_loader as data_generator
 import math
 import os
 import tensorflow as tf
-# from tensorflow import keras
 import numpy as np
 import time
-import cv2
 from tensorflow import ConfigProto
-
-# # This is the path to the original dataset
-original_dataset_path = "/home/toghi/Toghi_WS/PyWS/data/VOS/"
-
-# # Proprocess dataset and save it to a new directory as new_dataset_small
-data_generator.build_new_dataset(original_dataset_path)
-# data_generator.build_new_valid_dataset(original_dataset_path)
 
 VGG_MEAN = [103.939, 116.779, 123.68]
 
@@ -472,7 +463,6 @@ class My_network:
         # This will be the set of B batches and F frames to be fed to ConvLSTM
         encoder_output_stacked = tf.reshape(encoder_output, [self.input_image_encoder.shape[0], self.input_image_encoder.shape[1], encoder_output.shape[1], encoder_output.shape[2], encoder_output.shape[3]])
 
-
         # Feed the output of encoder to ConvLSTM
         conv_lstm = Unrolled_convLSTM()
         conv_lstm.build(encoder_output_stacked, c_0, h_0)
@@ -480,7 +470,6 @@ class My_network:
 
         # This will be fed to decoder
         lstm_output_unstacked = tf.reshape(lstm_output, (lstm_output.shape[0]*lstm_output.shape[1], lstm_output.shape[2], lstm_output.shape[3], lstm_output.shape[4]))
-
 
         # Feed the output of ConvLSTM to decoder
         decoder = Decoder()
@@ -523,122 +512,103 @@ class My_network:
 #######################################################################################################################
 # Build the graph
 
-def main(args, dataset_path):
+def main(args, checkpoints_path=None):
     print("Using TensorFlow V.", tf.__version__)
 
     # Initialization
+    dataset_path = "../new_dataset_small/train"
     n_epochs = args.n_epochs
     batch_size = args.batch_size
     lr = args.lr
 
     my_network = My_network(batch_size, LR=lr)
-    init, input_images_initializer, input_image_encoder, decoder_output, mask_output, groundtruth_mask, loss, train, saver, my_graph = my_network.graph_builder()
+    init, input_images_initializer, input_image_encoder, decoder_output, mask_output,\
+    groundtruth_mask, loss, train, saver, my_graph = my_network.graph_builder()
 
-
+    # # To limit the GPU utilization
     # gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.60)
-
     # config = ConfigProto(gpu_options=gpu_options)
     config = ConfigProto()
     config.gpu_options.allow_growth = True
 
     with tf.device("/device:GPU:0"):
+        if checkpoints_path is not None:
+            print("Reset the graph")
+            tf.reset_default_graph()
+
         with tf.Session(config=config, graph=my_graph) as sess:
-            # Initialize the graph
-            sess.run(init)
+
+            if checkpoints_path is None:
+                # Initialize the graph
+                sess.run(init)
+            else:
+                # Restore the checkpoint from disk.
+                saver.restore(sess, checkpoints_path)
+                print("Model restored from: ", checkpoints_path)
+
             # Save the graph
-            # writer = tf.summary.FileWriter('./graphs', graph=my_graph)
+            writer = tf.summary.FileWriter('./graphs', graph=my_graph)
 
             data_loader = loader.Data_loader(dataset_path)
-            # data_loader = data_loader.Data_loader(MAIN_DATASET_PATH)
             object_list = np.array(data_loader.get_object_list())
             n_batch = math.floor(len(object_list) / batch_size)
             print("INFO: Batch Size is {:d}, total number of batches: {:d} ".format(batch_size, n_batch))
 
-            loss_history_array = np.zeros([n_epochs*n_batch])
+            loss_history_array = np.zeros([n_epochs*n_batch]) # Saves the history of loss over epochs
 
             for epoch in range(n_epochs):
-                # print(object_list.shape)
-
                 # shuffle the dataset at each epoch
                 shuffled_object_list = object_list.copy()
                 np.random.shuffle(shuffled_object_list)
 
-                # print(shuffled_object_list.shape)
-                # shuffled_object_list = object_list
                 for idx in range(n_batch):
-                # for idx in range(1):
                     start_time = time.time()
-
-
                     batch_object_list = np.array(shuffled_object_list[idx * batch_size:(idx + 1) * batch_size])
                     assert len(batch_object_list) == batch_size
 
-                    # print(("1: %f s" % (time.time() - start_time)))
-                    # start_time = time.time()
-
-                    print("\n ***DEBUG:", batch_object_list)
                     input_initializer, input_encoder, groundtruth = data_loader.get_data_batch(batch_object_list)
                     eta_read = time.time() - start_time
                     start_time = time.time()
 
-                    # print(("2: %f s" % (time.time() - start_time)))
-                    # start_time = time.time()
-
-                    # print("input_initializer.shape", input_initializer.shape)
-                    # print("input_encoder.shape", input_encoder.shape)
-                    # print("groundtruth.shape", groundtruth.shape)
-
-
-
-                    # print("running session")
-                    history = sess.run([train, loss], feed_dict={input_images_initializer: input_initializer, input_image_encoder: input_encoder, groundtruth_mask: groundtruth})
-
-                    # print(("3: %f s" % (time.time() - start_time)))
-
+                    # Run the session
+                    history = sess.run([train, loss], feed_dict={input_images_initializer: input_initializer,
+                                                                 input_image_encoder: input_encoder,
+                                                                 groundtruth_mask: groundtruth})
                     eta_learn = time.time() - start_time
 
-
-                    print(" ###INFO: ETA: read:{:f}s, train:{:f}s, Epoch {:d}/{:d} Progress = %{:f}, Batch #{:d} ===> Loss = ".format(eta_read, eta_learn, epoch, n_epochs, 100*idx/n_batch, idx), history[1])
+                    print(" ###INFO: ETA: read:{:f}s, train:{:f}s, Epoch {:d}/{:d} Progress = %{:f},"
+                          " Batch #{:d} ===> Loss = ".format(eta_read, eta_learn, epoch, n_epochs,
+                                                             100*idx/n_batch, idx), history[1])
 
                     # Keep the track of loss
                     loss_history_array[epoch*n_batch+idx] = history[1]
 
-
-                    # # DEBUG VISUALIZATION
-                    # for b in range(len(input_encoder)):
-                    #     for f in range(len(input_encoder[b])):
-                    #         image = input_encoder[b][f]
-                    #         mask = groundtruth[b][f]
-                    #
-                    #
-                    #         cv2.imshow('img', image)
-                    #         cv2.waitKey(0)
-                    #         cv2.destroyAllWindows()
-                    #
-                    #         cv2.imshow('msk', mask)
-                    #         cv2.waitKey(0)
-                    #         cv2.destroyAllWindows()
-
                 # save the loss history to file
                 np.save("./loss_history.npy", loss_history_array)
 
-
+                # Save the checkpoints
                 save_path = saver.save(sess, "./checkpoints/model", global_step=epoch)
-                # print("End of epoch")
-                print("Model saved in path: %s" % save_path)
-
+                print("End of Epoch, Model saved in path: %s" % save_path)
 
         print("\n ***DEBUG: TRAINING DONE!")
 
 if __name__ == '__main__':
     import argparse
+    from utils.config_reader import conf_reader
 
+    # Reading configurations from the YAML file
+    configs = conf_reader()
+    original_dataset_path = configs["configs"]["path"] # Path to the original dataset
+    checkpoints_path = configs["configs"]["checkpoints_path"] # Path to the pre-saved checkpoint files
+
+    # Reading input arguments from command line
     parser = argparse.ArgumentParser(description='Youtube Video Object Segmentation.')
     parser.add_argument('--n_epochs', type=int, default=1, help='Number of Epochs for Training.')
     parser.add_argument('--batch_size', type=int, default=2, help='Size of the mini-batch.')
     parser.add_argument('--lr', type=float, default=1e-5, help='Learning Rate.')
     args = parser.parse_args()
 
-    dataset_path = "../new_dataset_small/train"
-    main(args, dataset_path)
+    # Proprocess dataset and save it to a new directory as new_dataset_small
+    data_generator.build_new_dataset(original_dataset_path)
 
+    main(args, checkpoints_path)
