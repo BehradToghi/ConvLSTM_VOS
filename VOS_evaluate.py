@@ -40,7 +40,7 @@ NOTICE: PLEASE SET THE DATASET PATH AND OTHER HYPERPARAMETERS HERE!
 
 from utils.saver_mask import Saver_mask
 from utils.vos_data_loader import Data_loader
-
+import utils.data_generator as data_generator
 from networks.decoder import Decoder
 from networks.lstm_initializer import LSTM_initializer
 from networks.encoder import Encoder
@@ -261,8 +261,9 @@ if __name__ == '__main__':
 
     # Proprocess dataset and save it to a new directory as new_dataset_small
     # data_generator.build_new_dataset(original_dataset_path)
+    data_generator.build_new_valid_dataset(original_dataset_path)
 
-    main(args)
+    # main(args)
 
 
 
