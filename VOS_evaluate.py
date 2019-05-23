@@ -3,7 +3,7 @@ This script creats the objects masks based on the trained model
 
 '''
 
-import utils.VOS_data_loader as data_loader
+# import utils.VOS_data_loader as data_loader
 from utils import rnn as rnn_net
 from utils import rnn_cell as rnn_cell
 from utils.rnn_cell_carlthome import ConvLSTMCell
@@ -224,7 +224,6 @@ def main(args):
                 eta_read = time.time() - start_time
                 start_time = time.time()
 
-
                 val_out = sess.run([mask_output, decoder_output],
                                    feed_dict={input_images_initializer: input_initializer,
                                               input_image_encoder: input_encoder})
@@ -238,8 +237,6 @@ def main(args):
 
                 saver_instance.store_masks(val_out, batch_val_object_list)
 
-
-
             print("done")
 
 if __name__ == '__main__':
@@ -248,6 +245,7 @@ if __name__ == '__main__':
 
     # Reading configurations from the YAML file
     configs = conf_reader()
+
     original_dataset_path = configs["configs"]["path"] # Path to the original dataset
     checkpoints_path = configs["configs"]["checkpoints_path"] # Path to the pre-saved checkpoint files
 

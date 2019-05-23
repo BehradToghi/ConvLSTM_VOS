@@ -1,3 +1,3 @@
 configs:
     path: "/home/toghi/Toghi_WS/PyWS/data/VOS/"  # Path the original Youtube-VOS dataset.
-    checkpoints_path: "./checkpoints/model-42"
+    checkpoints_path: "./checkpoints/model-11"

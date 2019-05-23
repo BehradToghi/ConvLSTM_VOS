@@ -75,8 +75,8 @@ class Data_loader:
                     mask_tmp = self.load_groundtruth(category, video_ID, object_ID, frame)  # (256, 448)
                     mask_tmp = mask_tmp.reshape(mask_tmp.shape+(1,))  # (256, 448, 1)
                     groundtruth[n][jj] = mask_tmp
-            else:
-                print(" ***DEBUG: There are less than 8 frames, skipping:", object_path)
+            # else:
+            #     print(" ***DEBUG: There are less than 8 frames, skipping:", object_path)
 
         return input_initializer, input_encoder, groundtruth
 
@@ -247,8 +247,8 @@ class Data_loader:
                 #     mask_tmp = self.load_val_groundtruth(video_ID, object_ID, frame)  # (256, 448)
                 #     mask_tmp = mask_tmp.reshape(mask_tmp.shape+(1,))  # (256, 448, 1)
                 #     groundtruth[n][jj] = mask_tmp
-            else:
-                print(" ***DEBUG: There are less than 8 frames")
+            # else:
+            #     print(" ***DEBUG: There are less than 8 frames")
 
         return input_initializer, input_encoder
 
@@ -281,106 +281,6 @@ class Data_loader:
         return img
 
 
-
-    def get_OL_data_batch(self, batch_object_list):
-
-
-        batch_size = len(batch_object_list)
-        input_initializer = np.zeros((batch_size, 256, 448, 4))
-        input_encoder = np.zeros((batch_size, 7, 256, 448, 3))
-        # input_initializer = np.zeros((batch_size, 768, 1344, 4))
-        # input_encoder = np.zeros((batch_size, 7, 768, 1344, 3))
-
-        groundtruth = np.zeros((self.batch_size, 7, 256, 448, 1))
-
-        for n in range(batch_size):
-            object = batch_object_list[n]
-
-            # print(object)
-
-            video_ID = object[0]
-            object_ID = object[1]
-            frame_list = object[2]
-
-
-
-            # object_path = os.path.join(self.path, "Annotations", video_ID, object_ID)
-            # frame_list = self.get_frame_range(object_path)
-            # print(" ###INFO: Reading object:", object_path)
-            # check if there are at least 7+1 frames for the object
-
-            # print(n, video_ID, object_ID, frame_list)
-            if len(frame_list)>=7:
-
-                initial_mask_path = os.path.join(self.path, "Annotations", video_ID, object_ID)
-
-
-                initial_frame = os.listdir(initial_mask_path)[0][0:-4]
-                # # get a random number
-                # rnd = randint(0, len(frame_list)-8)
-                # initial_frame = frame_list[rnd][0:-4]
-                # # print(initial_frame)
-
-                # Read the first frame to be fed to the LSTM initializer
-                input_initializer_tmp = self.load_OL_initializer_input(video_ID, object_ID, initial_frame) #(256, 448, 4)
-                input_initializer[n] = input_initializer_tmp
-
-                # Read 7 frames to be fed to Encoder
-                for ii in range(7):
-                    frame = initial_frame
-                    # frame = frame_list[ii][0:-4]
-                    # print(video_ID, frame)
-                    frame_tmp =  self.load_OL_encoder_input(video_ID, object_ID, frame) # (256, 448, 3)
-                    input_encoder[n][ii] = frame_tmp
-
-                # Read 7 groundtruth masks to calculate loss
-                for jj in range(7):
-                    # frame = frame_list[rnd+1+jj][0:-4]
-                    frame = initial_frame
-                    mask_tmp = self.load_OL_groundtruth(video_ID, object_ID, frame)  # (256, 448)
-                    mask_tmp = mask_tmp.reshape(mask_tmp.shape+(1,))  # (256, 448, 1)
-                    groundtruth[n][jj] = mask_tmp
-            else:
-                print(" ***DEBUG: There are less than 8 frames")
-
-        return input_initializer, input_encoder, groundtruth
-
-
-
-    def load_OL_initializer_input(self, video_ID, object_ID, frame_ID):
-        jpeg_path = os.path.join(self.path, "JPEGImages", video_ID, object_ID, frame_ID + ".jpg")
-        mask_path = os.path.join(self.path, "Annotations", video_ID, object_ID, frame_ID + ".png")
-
-        # print(" ###INFO: Reading initializer:", jpeg_path, mask_path)
-        # print(jpeg_path, mask_path)
-        # print("#########", video_ID, object_ID, frame_ID)
-        img = self.channel_adder(jpeg_path, mask_path)
-        img = img / 255.0
-        # resized_img = skimage.transform.resize(img, (256, 448))
-        return img
-
-    def load_OL_encoder_input(self, video_ID, object_ID, frame_ID):
-        jpeg_path = os.path.join(self.path, "JPEGImages", video_ID, object_ID, frame_ID + ".jpg")
-        # print(" ###INFO: Reading encoder in:", jpeg_path)
-        img = cv2.imread(jpeg_path, 1)
-        #
-        #
-        # cv2.imshow("img", img)
-        # cv2.waitKey(0)
-        # cv2.destroyAllWindows()
-
-        img = img / 255.0
-        # resized_img = skimage.transform.resize(img, (256, 448))
-        return img
-
-    def load_OL_groundtruth(self, category, video_ID, object_ID, frame_ID):
-        mask_path = os.path.join(self.path, "Annotations", category, video_ID, object_ID, frame_ID + ".png")
-        # print(" ###INFO: Reading groundtruth:", mask_path)
-        img = cv2.imread(mask_path, 0)
-        ret, img = cv2.threshold(img, 1, 255, cv2.THRESH_BINARY)
-        img = img / 255.0
-        # resized_img = skimage.transform.resize(img, (256, 448))
-        return img
 
 
 

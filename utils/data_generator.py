@@ -194,7 +194,7 @@ def save_valid_image_frame(original_dataset_path, video_type, video_ID, frame_ID
 def save_valid_mask_frame(image, video_type, video_ID, frame_ID, object_ID):
     # debug += 1
     # print("debug")
-    dir_annot = os.path.join("..", "..", "new_dataset_small", video_type, "Annotations", video_ID, str(object_ID))
+    dir_annot = os.path.join("..", "new_dataset_small", video_type, "Annotations", video_ID, str(object_ID))
     if not os.path.exists(dir_annot):
         os.makedirs(dir_annot)
     exists = os.path.isfile(dir_annot)
