@@ -98,15 +98,9 @@ def parse_objects(original_dataset_path, video_type, video_ID, category, frame_I
 
     colorl = np.subtract(color, unit_array)
     colorh = np.add(color, unit_array)
-    # cv2.imshow('image', img)
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
 
     mask = cv2.inRange(img, colorl, colorh)
-    # cv2.imshow('image', mask)
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
-    #
+
     if np.count_nonzero(mask) == 0:
         print("ERROR: no annotation in video ", video_ID, " object # ", object_ID, " frame # ", frame_ID)
 
