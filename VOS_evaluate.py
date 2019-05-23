@@ -1,46 +1,16 @@
 '''
-This script creats the objects masks based on the trained model
-
+After training your model with "VOS.py" file, you can evaluate the performance using this file.
+This script creates the objects masks based on the trained model
 '''
 
-# import utils.VOS_data_loader as data_loader
-from utils import rnn as rnn_net
-from utils import rnn_cell as rnn_cell
-from utils.rnn_cell_carlthome import ConvLSTMCell
-# from utils import data_loader as data_generator
-# from utils import mask_saver
 import math
-import os
 import tensorflow as tf
-# from tensorflow import keras
 import numpy as np
 import time
-import cv2
-
-from PIL import Image
-from PIL import ImageChops
-import shutil
 from tensorflow import ConfigProto
-
-'''
-NOTICE: PLEASE SET THE DATASET PATH AND OTHER HYPERPARAMETERS HERE!
-'''
-#
-# # This is the path to the original dataset
-# original_dataset_path = "/home/toghi/Toghi_WS/PyWS/data/VOS/"
-#
-# # Proprocess dataset and save it to a new directory as new_dataset_small
-# data_generator.build_new_dataset(original_dataset_path)
-
-# MAIN_DATASET_PATH = "../new_dataset_small/train"
-# MAIN_DATASET_PATH = "../new_dataset_small/valid"
-# MAIN_DATASET_PATH = "/home/toghi/Toghi_WS/PyWS/CAP6412/new_dataset_small/train"
-
-# VGG_MEAN = [103.939, 116.779, 123.68]
 
 from utils.saver_mask import Saver_mask
 from utils.vos_data_loader import Data_loader
-import utils.data_generator as data_generator
 from networks.decoder import Decoder
 from networks.lstm_initializer import LSTM_initializer
 from networks.encoder import Encoder
@@ -48,11 +18,9 @@ from networks.unrolled_convLSTM import Unrolled_convLSTM
 
 #######################################################################################################################
 class My_network:
-    # def __init__(self, batch_size, LR):
     def __init__(self, batch_size):
         self.my_graph = tf.Graph()
         self.batch_size = batch_size
-        # self.lr = LR
 
         with self.my_graph.as_default():
             with tf.variable_scope("global_name_scope", reuse=tf.AUTO_REUSE):

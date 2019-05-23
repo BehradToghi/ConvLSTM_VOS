@@ -185,7 +185,7 @@ def main(args, checkpoints_path=None):
 
                 # Save the checkpoints
                 save_path = saver.save(sess, "./checkpoints/model", global_step=epoch)
-                print("End of Epoch, Model saved in path: %s" % save_path)
+                print("End of Epoch, model saved in path: %s" % save_path)
 
         print("\n ***DEBUG: TRAINING DONE!")
 

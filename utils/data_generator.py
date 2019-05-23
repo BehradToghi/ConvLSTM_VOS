@@ -146,6 +146,9 @@ def build_new_valid_dataset (original_dataset_path):
             category = video["objects"][object_ID]["category"]
             frame_list = video["objects"][object_ID]["frames"]
             object_ID = int(object_ID, 10)
+
+
+
             if object_ID <6:
                 for frame_ID in frame_list:
                     if frame_ID == frame_list[0]:
