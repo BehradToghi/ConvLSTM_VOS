@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e987f232-0f1b-46eb-8d14-1b674b1b8a3e" name="Default Changelist" comment="">
+    <list default="true" id="e987f232-0f1b-46eb-8d14-1b674b1b8a3e" name="Default Changelist" comment="Debug">
+      <change beforePath="$PROJECT_DIR$/utils/data_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/data_generator.py" afterDir="false" />
+    </list>
+    <list id="003e2249-b645-4d44-a3cd-10759d70fea4" name="Added Network Modules" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/ECCV_Youtube_VOS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ECCV_Youtube_VOS.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/data_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/data_generator.py" afterDir="false" />
     </list>
+    <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,14 +18,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.46587265">
       <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+        <leaf>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/VOS_evaluate.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
+                <state relative-caret-position="854">
+                  <caret line="263" column="42" selection-start-line="263" selection-start-column="19" selection-end-line="263" selection-end-column="42" />
                   <folding>
                     <element signature="e#139#182#0" expanded="true" />
                   </folding>
@@ -28,13 +33,13 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/utils/saver_mask.py">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/utils/data_generator.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" selection-start-line="7" selection-end-line="7" />
+                <state relative-caret-position="794">
+                  <caret line="212" selection-start-line="212" selection-end-line="212" />
                   <folding>
-                    <element signature="e#120#129#0" expanded="true" />
+                    <element signature="e#0#11#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -47,8 +52,11 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/VOS.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="21" selection-start-line="21" selection-end-line="21" />
+                <state relative-caret-position="306">
+                  <caret line="117" column="9" lean-forward="true" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
+                  <folding>
+                    <element signature="e#139#182#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -74,33 +82,48 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/utils/config_reader.py" />
         <option value="$PROJECT_DIR$/config.yaml" />
-        <option value="$PROJECT_DIR$/utils/data_generator.py" />
         <option value="$PROJECT_DIR$/networks/Encoder.py" />
         <option value="$PROJECT_DIR$/networks/Unrolled_convLSTM.py" />
+        <option value="$PROJECT_DIR$/VOS.py" />
         <option value="$PROJECT_DIR$/networks/Decoder.py" />
         <option value="$PROJECT_DIR$/networks/LSTM_initializer.py" />
         <option value="$PROJECT_DIR$/utils/saver_mask.py" />
         <option value="$PROJECT_DIR$/utils/Saver_mask.py" />
-        <option value="$PROJECT_DIR$/VOS.py" />
         <option value="$PROJECT_DIR$/VOS_evaluate.py" />
+        <option value="$PROJECT_DIR$/utils/data_generator.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="240" />
-    <option name="y" value="570" />
-    <option name="width" value="1440" />
-    <option name="height" value="810" />
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/utils/data_generator.py">
+      <ranges>
+        <range start1="121" end1="122" start2="121" end2="121" changelist="e987f232-0f1b-46eb-8d14-1b674b1b8a3e" />
+        <range start1="143" end1="144" start2="142" end2="142" changelist="e987f232-0f1b-46eb-8d14-1b674b1b8a3e" />
+        <range start1="148" end1="149" start2="146" end2="146" changelist="e987f232-0f1b-46eb-8d14-1b674b1b8a3e" />
+        <range start1="159" end1="160" start2="156" end2="156" changelist="e987f232-0f1b-46eb-8d14-1b674b1b8a3e" />
+        <range start1="161" end1="164" start2="157" end2="157" changelist="e987f232-0f1b-46eb-8d14-1b674b1b8a3e" />
+        <range start1="167" end1="168" start2="160" end2="160" changelist="e987f232-0f1b-46eb-8d14-1b674b1b8a3e" />
+        <range start1="169" end1="170" start2="161" end2="161" changelist="e987f232-0f1b-46eb-8d14-1b674b1b8a3e" />
+        <range start1="178" end1="180" start2="169" end2="169" changelist="e987f232-0f1b-46eb-8d14-1b674b1b8a3e" />
+        <range start1="194" end1="196" start2="183" end2="185" changelist="003e2249-b645-4d44-a3cd-10759d70fea4" />
+        <range start1="205" end1="206" start2="194" end2="195" changelist="003e2249-b645-4d44-a3cd-10759d70fea4" />
+        <range start1="215" end1="216" start2="204" end2="205" changelist="003e2249-b645-4d44-a3cd-10759d70fea4" />
+        <range start1="220" end1="221" start2="209" end2="210" changelist="003e2249-b645-4d44-a3cd-10759d70fea4" />
+        <range start1="224" end1="259" start2="213" end2="213" changelist="e987f232-0f1b-46eb-8d14-1b674b1b8a3e" />
+      </ranges>
+    </file>
   </component>
-  <component name="ProjectLevelVcsManager">
-    <OptionsSetting value="false" id="Update" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1707" />
+    <option name="y" value="-53" />
+    <option name="width" value="698" />
+    <option name="height" value="413" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -111,17 +134,24 @@
             <path>
               <item name="ECCV_Youtube_VOS" type="b2602c69:ProjectViewProjectNode" />
               <item name="ECCV_Youtube_VOS" type="462c0819:PsiDirectoryNode" />
+              <item name="networks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ECCV_Youtube_VOS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ECCV_Youtube_VOS" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -191,6 +221,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e987f232-0f1b-46eb-8d14-1b674b1b8a3e" name="Default Changelist" comment="" />
+      <changelist id="003e2249-b645-4d44-a3cd-10759d70fea4" name="Added Network Modules" comment="" />
       <created>1558484030237</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -203,51 +234,88 @@
       <option name="project" value="LOCAL" />
       <updated>1558567620827</updated>
     </task>
-    <task id="LOCAL-00002" summary="Filenames fixed">
-      <created>1558636750206</created>
+    <task id="LOCAL-00002" summary="Added Network Modules">
+      <created>1558635287132</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1558636750206</updated>
+      <updated>1558635287132</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Network Modules">
+      <created>1558636325308</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1558636325308</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Debug">
+      <created>1558636431444</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1558636431444</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Validation Data Generator added">
+      <created>1558641271338</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1558641271338</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added Network Modules">
+      <created>1558641869198</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558641869198</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="4" />
   <component name="ToolWindowManager">
-    <frame x="65" y="431" width="1855" height="1084" extended-state="6" />
+    <frame x="-3847" y="-7" width="2575" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12227074" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14021268" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Version Control" visible="true" weight="0.2647975" />
+      <window_info anchor="bottom" id="Python Console" weight="0.32943925" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32943925" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.16101696" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Python Console" order="9" weight="0.32943925" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="RECENT_FILTERS">
+    <option name="TAB_STATES">
       <map>
-        <entry key="Branch">
+        <entry key="MAIN">
           <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -255,8 +323,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Config YAML added" />
-    <MESSAGE value="Filenames fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Filenames fixed" />
+    <MESSAGE value="Debug" />
+    <MESSAGE value="Validation Data Generator added" />
+    <MESSAGE value="Added Network Modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Network Modules" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -269,8 +339,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VOS_finetune.py" />
-    <entry file="file://$PROJECT_DIR$/networks/Encoder.py">
+    <entry file="file://$PROJECT_DIR$/VOS_finetune.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="561" selection-start-line="561" selection-end-line="564" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/networks/encoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
@@ -280,7 +356,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/networks/LSTM_initializer.py">
+    <entry file="file://$PROJECT_DIR$/networks/lstm_initializer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -289,7 +365,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/networks/Decoder.py">
+    <entry file="file://$PROJECT_DIR$/networks/decoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -298,8 +374,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/base_layer.py" />
-    <entry file="file://$PROJECT_DIR$/utils/mask_saver.py" />
+    <entry file="file://$PROJECT_DIR$/utils/base_layer.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/mask_saver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils/config_reader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -307,7 +393,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/networks/Unrolled_convLSTM.py">
+    <entry file="file://$PROJECT_DIR$/networks/unrolled_convLSTM.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
@@ -317,8 +403,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/data_generator.py" />
-    <entry file="file://$PROJECT_DIR$/utils/Saver_mask.py" />
+    <entry file="file://$PROJECT_DIR$/utils/vos_data_loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="139" column="37" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -326,39 +420,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/VOS_data_loader.py">
+    <entry file="file://$PROJECT_DIR$/VOS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="113" column="42" selection-start-line="113" selection-start-column="33" selection-end-line="113" selection-end-column="42" />
+        <state relative-caret-position="306">
+          <caret line="117" column="9" lean-forward="true" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#139#182#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/saver_mask.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="782">
+          <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
           <folding>
             <element signature="e#120#129#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VOS.py">
+    <entry file="file://$PROJECT_DIR$/VOS_evaluate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="854">
+          <caret line="263" column="42" selection-start-line="263" selection-start-column="19" selection-end-line="263" selection-end-column="42" />
+          <folding>
+            <element signature="e#139#182#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VOS_evaluate.py">
+    <entry file="file://$PROJECT_DIR$/utils/data_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
+        <state relative-caret-position="794">
+          <caret line="212" selection-start-line="212" selection-end-line="212" />
           <folding>
-            <element signature="e#139#182#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
