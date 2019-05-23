@@ -1,4 +1,5 @@
 # Sequence-to-Sequence Video Object Segmentation
+An end-to-end trainable model for object segmentation using convolutional LSTM and VGG-16 Architecture.
 
 ### Abstract:
 This is an implementation of the method based on Conv-LSTM and Encoder-Decoder architecture proposed in:
