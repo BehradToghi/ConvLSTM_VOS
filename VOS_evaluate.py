@@ -38,12 +38,14 @@ NOTICE: PLEASE SET THE DATASET PATH AND OTHER HYPERPARAMETERS HERE!
 
 # VGG_MEAN = [103.939, 116.779, 123.68]
 
-from networks.Decoder import Decoder
-from networks.LSTM_initializer import LSTM_initializer
-from networks.Encoder import Encoder
-from networks.Unrolled_convLSTM import Unrolled_convLSTM
-from utils.Saver_mask import Saver_mask
-from utils.VOS_data_loader import Data_loader
+from utils.saver_mask import Saver_mask
+from utils.vos_data_loader import Data_loader
+
+from networks.decoder import Decoder
+from networks.lstm_initializer import LSTM_initializer
+from networks.encoder import Encoder
+from networks.unrolled_convLSTM import Unrolled_convLSTM
+
 #######################################################################################################################
 class My_network:
     # def __init__(self, batch_size, LR):

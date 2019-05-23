@@ -7,7 +7,7 @@ https://arxiv.org/abs/1809.00461
 Author: Behrad Toghi
 '''
 
-import utils.VOS_data_loader as loader
+from utils import vos_data_loader as loader
 from utils import data_generator as data_generator
 
 import math
@@ -16,10 +16,10 @@ import numpy as np
 import time
 from tensorflow import ConfigProto
 
-from networks.Decoder import Decoder
-from networks.LSTM_initializer import LSTM_initializer
-from networks.Encoder import Encoder
-from networks.Unrolled_convLSTM import Unrolled_convLSTM
+from networks.decoder import Decoder
+from networks.lstm_initializer import LSTM_initializer
+from networks.encoder import Encoder
+from networks.unrolled_convLSTM import Unrolled_convLSTM
 
 #######################################################################################################################
 class My_network:
