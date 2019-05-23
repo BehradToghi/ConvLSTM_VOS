@@ -7,8 +7,6 @@ https://arxiv.org/abs/1809.00461
 Author: Behrad Toghi
 '''
 
-from utils import vos_data_loader as loader
-from utils import data_generator as data_generator
 
 import math
 import tensorflow as tf
@@ -20,7 +18,8 @@ from networks.decoder import Decoder
 from networks.lstm_initializer import LSTM_initializer
 from networks.encoder import Encoder
 from networks.unrolled_convLSTM import Unrolled_convLSTM
-
+from utils import vos_data_loader as loader
+from utils import data_generator as data_generator
 #######################################################################################################################
 class My_network:
     def __init__(self, batch_size, LR):
