@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e987f232-0f1b-46eb-8d14-1b674b1b8a3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ECCV_Youtube_VOS.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/networks/LSTM_initializer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/networks/Unrolled_convLSTM.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/saver_mask.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VOS.py" beforeDir="false" afterPath="$PROJECT_DIR$/VOS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VOS_evaluate.py" beforeDir="false" afterPath="$PROJECT_DIR$/VOS_evaluate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VOS_finetune.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/base_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/networks/Decoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_loader.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/mask_saver.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/plot_loss.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/test.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/networks/Encoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ECCV_Youtube_VOS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ECCV_Youtube_VOS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,14 +13,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.46587265">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/VOS_evaluate.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="218">
-                  <caret line="238" column="38" lean-forward="true" selection-start-line="238" selection-start-column="38" selection-end-line="238" selection-end-column="38" />
+                <state relative-caret-position="360">
+                  <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
                   <folding>
                     <element signature="e#139#182#0" expanded="true" />
                   </folding>
@@ -43,36 +29,12 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/utils/Saver_mask.py">
+            <entry file="file://$PROJECT_DIR$/utils/saver_mask.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" column="50" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="50" />
+                <state relative-caret-position="105">
+                  <caret line="7" selection-start-line="7" selection-end-line="7" />
                   <folding>
                     <element signature="e#120#129#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/utils/data_generator.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1343">
-                  <caret line="79" column="23" lean-forward="true" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
-                  <folding>
-                    <element signature="e#0#11#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/utils/VOS_data_loader.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
-                  <caret line="139" column="37" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="37" />
-                  <folding>
-                    <element signature="e#0#11#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -85,11 +47,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/VOS.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="115" column="16" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="16" />
-                  <folding>
-                    <element signature="e#139#177#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="315">
+                  <caret line="21" selection-start-line="21" selection-end-line="21" />
                 </state>
               </provider>
             </entry>
@@ -118,20 +77,23 @@
         <option value="$PROJECT_DIR$/utils/data_generator.py" />
         <option value="$PROJECT_DIR$/networks/Encoder.py" />
         <option value="$PROJECT_DIR$/networks/Unrolled_convLSTM.py" />
-        <option value="$PROJECT_DIR$/VOS.py" />
         <option value="$PROJECT_DIR$/networks/Decoder.py" />
         <option value="$PROJECT_DIR$/networks/LSTM_initializer.py" />
         <option value="$PROJECT_DIR$/utils/saver_mask.py" />
         <option value="$PROJECT_DIR$/utils/Saver_mask.py" />
+        <option value="$PROJECT_DIR$/VOS.py" />
         <option value="$PROJECT_DIR$/VOS_evaluate.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1724" />
-    <option name="y" value="-69" />
-    <option name="width" value="698" />
-    <option name="height" value="413" />
+    <option name="x" value="240" />
+    <option name="y" value="570" />
+    <option name="width" value="1440" />
+    <option name="height" value="810" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -145,11 +107,6 @@
             <path>
               <item name="ECCV_Youtube_VOS" type="b2602c69:ProjectViewProjectNode" />
               <item name="ECCV_Youtube_VOS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ECCV_Youtube_VOS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ECCV_Youtube_VOS" type="462c0819:PsiDirectoryNode" />
-              <item name="networks" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ECCV_Youtube_VOS" type="b2602c69:ProjectViewProjectNode" />
@@ -246,35 +203,60 @@
       <option name="project" value="LOCAL" />
       <updated>1558567620827</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Filenames fixed">
+      <created>1558636750206</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1558636750206</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="TodoView" selected-index="4" />
   <component name="ToolWindowManager">
-    <frame x="-3847" y="-7" width="2575" height="1415" extended-state="6" />
+    <frame x="65" y="431" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14021268" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12227074" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" weight="0.32943925" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32943925" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32943925" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.32943925" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Config YAML added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Config YAML added" />
+    <MESSAGE value="Filenames fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Filenames fixed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -287,13 +269,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VOS_finetune.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="561" selection-start-line="561" selection-end-line="564" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/VOS_finetune.py" />
     <entry file="file://$PROJECT_DIR$/networks/Encoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -322,18 +298,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/base_layer.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/mask_saver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/base_layer.py" />
+    <entry file="file://$PROJECT_DIR$/utils/mask_saver.py" />
     <entry file="file://$PROJECT_DIR$/utils/config_reader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -351,46 +317,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/data_generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="79" column="23" lean-forward="true" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/VOS_data_loader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="139" column="37" selection-start-line="139" selection-start-column="33" selection-end-line="139" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VOS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="115" column="16" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="16" />
-          <folding>
-            <element signature="e#139#177#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/Saver_mask.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="50" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="50" />
-          <folding>
-            <element signature="e#120#129#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/data_generator.py" />
+    <entry file="file://$PROJECT_DIR$/utils/Saver_mask.py" />
     <entry file="file://$PROJECT_DIR$/config.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -398,10 +326,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/utils/VOS_data_loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="113" column="42" selection-start-line="113" selection-start-column="33" selection-end-line="113" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/saver_mask.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#120#129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VOS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/VOS_evaluate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="238" column="38" lean-forward="true" selection-start-line="238" selection-start-column="38" selection-end-line="238" selection-end-column="38" />
+        <state relative-caret-position="360">
+          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
           <folding>
             <element signature="e#139#182#0" expanded="true" />
           </folding>
