@@ -200,7 +200,6 @@ def main(args):
             print("###DEBUG: Total object number is {:d}, n_batch is {:f}, batch size is: {:d}"
                   .format(len(object_list), n_batch, batch_size))
 
-            # n_batch = 1
 
             for idx in range(n_batch):
                 start_time = time.time()
