@@ -56,7 +56,7 @@ class Saver_mask:
                     self.save_image(final_mask)
 
     def save_image(self, img):
-        save_path = os.path.join("..", "..", self.scenario_name, self.video_ID)
+        save_path = os.path.join("..", self.scenario_name, self.video_ID)
         isMask, mask_new_shape = self.get_mask_shape()
 
         if isMask:

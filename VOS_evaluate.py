@@ -213,7 +213,7 @@ def main(args):
                     batch_val_object_list = object_list[start_i:end_i]
                 else:
                     # print(len(object_list)-4, len(object_list))
-                    batch_val_object_list = object_list[len(object_list)-4:len(object_list)]
+                    batch_val_object_list = object_list[len(object_list)-batch_size:len(object_list)]
                 assert len(batch_val_object_list) == batch_size
 
                 # print("\n ***DEBUG:", batch_val_object_list)
@@ -258,10 +258,9 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Proprocess dataset and save it to a new directory as new_dataset_small
-    # data_generator.build_new_dataset(original_dataset_path)
-    data_generator.build_new_valid_dataset(original_dataset_path)
+    # data_generator.build_new_valid_dataset(original_dataset_path)
 
-    # main(args)
+    main(args)
 
 
 
