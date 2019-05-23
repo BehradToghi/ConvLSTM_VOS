@@ -1,10 +1,6 @@
 '''
-Sequence-to-sequence Video Object Segmentation
-Using YouTube-VOS dataset:
+This script creats the objects masks based on the trained model
 
-https://arxiv.org/abs/1809.00461
-
-Author: Behrad Toghi
 '''
 
 import utils.VOS_data_loader as data_loader
