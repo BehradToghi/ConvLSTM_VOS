@@ -175,9 +175,7 @@ def parse_valid_objects(original_dataset_path, video_type, video_ID, category, f
 
     else:
         result = cv2.bitwise_and(img, img, mask=mask)
-        resized_mask = cv2.resize(result, (1344, 768))
-        # resized_mask = cv2.resize(result, (448, 256))
-        # resized_mask = result
+        resized_mask = cv2.resize(result, (448, 256))
         save_valid_mask_frame(resized_mask, video_type, video_ID, frame_ID, object_ID)
         # save_valid_image_frame(original_dataset_path, video_type, video_ID, frame_ID, object_ID)
     # else:
@@ -186,7 +184,7 @@ def parse_valid_objects(original_dataset_path, video_type, video_ID, category, f
 
 def save_valid_image_frame(original_dataset_path, video_type, video_ID, frame_ID, object_ID):
 
-    dir_jpeg = os.path.join("..", "..", "new_dataset_large_valid", video_type, "JPEGImages", video_ID, str(object_ID))
+    dir_jpeg = os.path.join("..", "new_dataset_small", video_type, "JPEGImages", video_ID, str(object_ID))
     if not os.path.exists(dir_jpeg):
         os.makedirs(dir_jpeg)
     jpeg_source_path = os.path.join(original_dataset_path, video_type, "JPEGImages", video_ID, frame_ID+".jpg")
@@ -196,11 +194,11 @@ def save_valid_image_frame(original_dataset_path, video_type, video_ID, frame_ID
 def save_valid_mask_frame(image, video_type, video_ID, frame_ID, object_ID):
     # debug += 1
     # print("debug")
-    dir_annot = os.path.join("..", "..", "new_dataset_large_valid", video_type, "Annotations", video_ID, str(object_ID))
+    dir_annot = os.path.join("..", "..", "new_dataset_small", video_type, "Annotations", video_ID, str(object_ID))
     if not os.path.exists(dir_annot):
         os.makedirs(dir_annot)
     exists = os.path.isfile(dir_annot)
     if exists:
-        print("########## ERROR", dir_annot)
+        print("###ERROR: Already exists: ", dir_annot)
     annot_path = os.path.join(dir_annot, frame_ID+".png")
     cv2.imwrite(annot_path, image)
