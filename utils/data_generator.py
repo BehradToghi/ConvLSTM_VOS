@@ -119,7 +119,6 @@ def parse_objects(original_dataset_path, video_type, video_ID, category, frame_I
 
 
 def build_new_dataset (original_dataset_path):
-
     video_type = "train"
     json_path = os.path.join(original_dataset_path, video_type, "meta.json")
     videos = json_reader(json_path)
@@ -141,12 +140,10 @@ def build_new_dataset (original_dataset_path):
 
 
 def build_new_valid_dataset (original_dataset_path):
-
     video_type = "valid"
     json_path = os.path.join(original_dataset_path, video_type, "meta.json")
     videos = json_reader(json_path)
     counter = 0
-    # debug = 0
     for video_ID in videos:
         counter += 1
         print("Reading validation video #", counter, " video_ID = ", video_ID)
@@ -157,17 +154,11 @@ def build_new_valid_dataset (original_dataset_path):
             object_ID = int(object_ID, 10)
             if object_ID <6:
                 for frame_ID in frame_list:
-                    # print(frame_list)
                     if frame_ID == frame_list[0]:
-                        # debug += 1
-                        # print(debug)
-                    #
                         parse_valid_objects(original_dataset_path, video_type, video_ID, category, frame_ID, object_ID)
                         save_valid_image_frame(original_dataset_path, video_type, video_ID, frame_ID, object_ID)
                     else:
-                    #
                         save_valid_image_frame(original_dataset_path, video_type, video_ID, frame_ID, object_ID)
-                    # print(video_ID, object_ID, category, frame_ID)
             else:
                 print("ERROR: more than 5 objects in video ", video_ID)
 
@@ -176,8 +167,6 @@ def parse_valid_objects(original_dataset_path, video_type, video_ID, category, f
     colors = [[103, 95, 236], [87, 145, 249], [99, 200, 250], [148, 199, 153], [178, 179, 98]]
     unit_array = np.array([1, 1, 1])
 
-    # if frame_ID == "00000":
-    # print(video_ID, object_ID, category, frame_ID)
 
     frame_path = os.path.join(original_dataset_path, video_type, "Annotations", video_ID, frame_ID+".png")
     img = cv2.imread(frame_path, 1)
@@ -221,39 +210,3 @@ def save_valid_mask_frame(image, video_type, video_ID, frame_ID, object_ID):
         print("########## ERROR", dir_annot)
     annot_path = os.path.join(dir_annot, frame_ID+".png")
     cv2.imwrite(annot_path, image)
-
-# debug = 0
-# #
-# original_path = "/home/toghi/Toghi_WS/PyWS/data/VOS/"
-# build_new_valid_dataset(original_path)
-
-# json_path = "/home/toghi/Toghi_WS/PyWS/data/VOS/valid/meta.json"
-# print(object_counter(json_path))
-
-# json_path = "/home/toghi/Toghi_WS/PyWS/data/VOS/train/meta.json"
-# frame_path = "/home/toghi/Toghi_WS/PyWS/data/VOS/train/Annotations/003234408d/00000.png"
-# original_dataset_path = "/home/toghi/Toghi_WS/PyWS/data/VOS/"
-# path = "/home/toghi/Toghi_WS/PyWS/CAP6412/new_dataset_2/train/Annotations"
-#
-# build_new_valid_dataset(original_dataset_path)
-#
-# def test_dataloader(path):
-#     cnt = 0
-#     print(path)
-#     for subdir, dirs, files in os.walk(path):
-#         for file in files:
-#             if file.endswith(".png"):
-#
-#
-#                 # cnt += 1
-#                 # print(file)
-#                 # print(subdir)
-#                 # print(os.path.split(subdir)[1])
-#                 # print(dir)
-#             # else:
-#                 # print(file)
-#
-#     # print(cnt)
-#     return
-#
-# test_dataloader(path)
