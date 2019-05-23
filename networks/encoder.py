@@ -100,10 +100,6 @@ class Encoder:
     def new_conv_layer(self, bottom, filter_size, in_channels, out_channels, name):
         # builds a new convolutional layer initialized by Xavier or Normal weights
         with tf.variable_scope("encoder_"+name):
-            #
-            # init_weights = tf.truncated_normal([filter_size, filter_size, in_channels, out_channels], 0.0, 0.001)
-            # filt = tf.Variable(init_weights, name=name+"_filter")
-
             filt = tf.get_variable(name + "_filter", shape=[filter_size, filter_size, in_channels, out_channels], initializer=tf.contrib.layers.xavier_initializer())
 
             init_biases = tf.truncated_normal([out_channels], .01, .001)
