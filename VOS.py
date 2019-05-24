@@ -1,4 +1,7 @@
 '''
+This scripts runs the training phase. You can indicate the configurable variable (Learning rate, number of epochs and
+batch size as terminal inputs. Please refer to Readme.md for more information.
+
 Sequence-to-sequence Video Object Segmentation
 Using YouTube-VOS dataset:
 
@@ -13,6 +16,7 @@ import tensorflow as tf
 import numpy as np
 import time
 from tensorflow import ConfigProto
+import argparse
 
 from networks.decoder import Decoder
 from networks.lstm_initializer import LSTM_initializer
@@ -20,7 +24,10 @@ from networks.encoder import Encoder
 from networks.unrolled_convLSTM import Unrolled_convLSTM
 from utils import vos_data_loader as loader
 from utils import data_generator as data_generator
+from utils.config_reader import conf_reader
 #######################################################################################################################
+
+
 class My_network:
     def __init__(self, batch_size, LR):
         self.my_graph = tf.Graph()
@@ -29,7 +36,6 @@ class My_network:
 
         with self.my_graph.as_default():
             with tf.variable_scope("global_name_scope", reuse=tf.AUTO_REUSE):
-
                 # Initialize placeholders
                 self.input_images_initializer = tf.placeholder("float", [batch_size, 256, 448, 4])
                 self.input_image_encoder = tf.placeholder("float", [batch_size, 7, 256, 448, 3])
@@ -42,12 +48,9 @@ class My_network:
 
                 # Initialize the graph
                 self.init = tf.global_variables_initializer()
-
                 self.saver = tf.train.Saver() #(max_to_keep=0)
 
-
     def init_model(self):
-
         # Get Initial states for LSTM from the first image and its masked
         lstm_initializer = LSTM_initializer()
         lstm_initializer.build(self.input_images_initializer)
@@ -56,14 +59,17 @@ class My_network:
 
         # Get 7 frames and feed them to Encoder
         tmp_shape = self.input_image_encoder.shape
-        input_image_encoder_unstacked = tf.reshape(self.input_image_encoder, [tmp_shape[0]*tmp_shape[1], tmp_shape[2], tmp_shape[3], tmp_shape[4]])
+        input_image_encoder_unstacked = tf.reshape(self.input_image_encoder, [tmp_shape[0]*tmp_shape[1],
+                                                                              tmp_shape[2], tmp_shape[3], tmp_shape[4]])
 
         encoder = Encoder()
         encoder.build(input_image_encoder_unstacked)
         encoder_output = encoder.conv6
 
         # This will be the set of B batches and F frames to be fed to ConvLSTM
-        encoder_output_stacked = tf.reshape(encoder_output, [self.input_image_encoder.shape[0], self.input_image_encoder.shape[1], encoder_output.shape[1], encoder_output.shape[2], encoder_output.shape[3]])
+        encoder_output_stacked = tf.reshape(encoder_output, [self.input_image_encoder.shape[0],
+                                                             self.input_image_encoder.shape[1], encoder_output.shape[1],
+                                                             encoder_output.shape[2], encoder_output.shape[3]])
 
         # Feed the output of encoder to ConvLSTM
         conv_lstm = Unrolled_convLSTM()
@@ -71,7 +77,9 @@ class My_network:
         lstm_output = conv_lstm.lstm_output
 
         # This will be fed to decoder
-        lstm_output_unstacked = tf.reshape(lstm_output, (lstm_output.shape[0]*lstm_output.shape[1], lstm_output.shape[2], lstm_output.shape[3], lstm_output.shape[4]))
+        lstm_output_unstacked = tf.reshape(lstm_output, (lstm_output.shape[0]*lstm_output.shape[1],
+                                                         lstm_output.shape[2], lstm_output.shape[3],
+                                                         lstm_output.shape[4]))
 
         # Feed the output of ConvLSTM to decoder
         decoder = Decoder()
@@ -79,7 +87,9 @@ class My_network:
         decoder_output = decoder.y_hat
         mask_output = decoder.mask_out
 
-        self.decoder_output_unstacked = tf.reshape(decoder_output, (lstm_output.shape[0], lstm_output.shape[1], decoder_output.shape[1], decoder_output.shape[2], decoder_output.shape[3]))
+        self.decoder_output_unstacked = tf.reshape(decoder_output, (lstm_output.shape[0], lstm_output.shape[1],
+                                                                    decoder_output.shape[1], decoder_output.shape[2],
+                                                                    decoder_output.shape[3]))
         self.mask_output_unstacked = tf.reshape(mask_output, self.decoder_output_unstacked.shape)
 
     def init_loss(self):
@@ -98,19 +108,15 @@ class My_network:
             optimizer = tf.train.AdamOptimizer(learning_rate=self.lr, name='Adam')
             self.train = optimizer.minimize(self.loss)
 
-
-
     def graph_builder(self):
         return self.init, self.input_images_initializer, self.input_image_encoder, self.decoder_output_unstacked,\
                self.mask_output_unstacked, self.groundtruth_mask, self.loss, self.train, self.saver, self.my_graph
-
-
 #######################################################################################################################
 # Build the graph
 
+
 def main(args, checkpoints_path=None):
     print("Using TensorFlow V.", tf.__version__)
-
     # Initialization
     dataset_path = "../new_dataset_small/train"
     n_epochs = args.n_epochs
@@ -131,9 +137,7 @@ def main(args, checkpoints_path=None):
         if checkpoints_path is not None:
             print("Reset the graph")
             tf.reset_default_graph()
-
         with tf.Session(config=config, graph=my_graph) as sess:
-
             if checkpoints_path is None:
                 # Initialize the graph
                 sess.run(init)
@@ -185,12 +189,9 @@ def main(args, checkpoints_path=None):
                 # Save the checkpoints
                 save_path = saver.save(sess, "./checkpoints/model", global_step=epoch)
                 print("End of Epoch, model saved in path: %s" % save_path)
-
         print("\n ***DEBUG: TRAINING DONE!")
 
 if __name__ == '__main__':
-    import argparse
-    from utils.config_reader import conf_reader
 
     # Reading configurations from the YAML file
     configs = conf_reader()
@@ -207,4 +208,5 @@ if __name__ == '__main__':
     # Proprocess dataset and save it to a new directory as new_dataset_small
     data_generator.build_new_dataset(original_dataset_path)
 
+    # Run the training
     main(args, checkpoints_path)

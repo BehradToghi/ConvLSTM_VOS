@@ -27,12 +27,12 @@ class Saver_mask:
             for jj in range(len(frames_list)):
                 self.frame = frames_list[jj]
 
-                # print(self.video_ID, self.object_ID, self.frame)
+                print(self.video_ID, self.object_ID, self.frame)
                 source_path, existsMask = self.check_first_annotation()
 
                 # Check if this is the initial annotation which alread exist in the dataset
                 if existsMask:
-                    # print("###DEBUG: Annotation already exists, copying from: ", source_path)
+                    print("###DEBUG: Annotation already exists, copying from: ", source_path)
                     save_path = os.path.join("..", self.scenario_name, self.video_ID)  # ,
                     if not os.path.exists(save_path):
                         os.makedirs(save_path)
@@ -106,6 +106,6 @@ class Saver_mask:
             # if sample_mask.shape != (720, 1280,3):
             #     print("###### ERROR: SAMPLE MASK SIZE IS NOT 720x1280", sample_mask_path)
         else:
-            # print("#Debug: file does not exist: ", sample_mask_path)
+            print("#Debug: file does not exist: ", sample_mask_path)
             size = (720, 1280, 3)
         return flag, size
