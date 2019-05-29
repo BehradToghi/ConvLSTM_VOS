@@ -53,7 +53,7 @@ class Data_loader:
                 # Read 7 frames to be fed to Encoder
                 for ii in range(7):
                     frame = frame_list[rnd+1+ii][0:-4]
-                    print(video_ID, object_ID, frame)
+                    # print(video_ID, object_ID, frame)
                     frame_tmp =  self.load_encoder_input(category, video_ID, object_ID, frame) # (256, 448, 3)
                     input_encoder[n][ii] = frame_tmp
 

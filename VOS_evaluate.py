@@ -156,10 +156,8 @@ if __name__ == '__main__':
 
     # Reading input arguments from command line
     parser = argparse.ArgumentParser(description='Youtube Video Object Segmentation.')
-    # parser.add_argument('--n_epochs', type=int, default=1, help='Number of Epochs for Training.')
     parser.add_argument('--batch_size', type=int, default=2, help='Size of the mini-batch.')
     parser.add_argument('--scenario_name', type=str, default="validation_results", help='Validation scenario name.')
-    # parser.add_argument('--lr', type=float, default=1e-5, help='Learning Rate.')
     args = parser.parse_args()
 
     # Proprocess dataset and save it to a new directory as new_dataset_small

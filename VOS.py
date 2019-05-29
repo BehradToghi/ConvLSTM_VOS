@@ -152,7 +152,7 @@ def main(args, checkpoints_path=None):
             data_loader = loader.Data_loader(dataset_path)
             object_list = np.array(data_loader.get_object_list())
             n_batch = math.floor(len(object_list) / batch_size)
-            print("INFO: Batch Size is {:d}, total number of batches: {:d} ".format(batch_size, n_batch))
+            print("###INFO: Batch Size is {:d}, total number of batches: {:d} ".format(batch_size, n_batch))
 
             loss_history_array = np.zeros([n_epochs*n_batch]) # Saves the history of loss over epochs
 
@@ -176,8 +176,8 @@ def main(args, checkpoints_path=None):
                                                                  groundtruth_mask: groundtruth})
                     eta_learn = time.time() - start_time
 
-                    print(" ###INFO: ETA: read:{:f}s, train:{:f}s, Epoch {:d}/{:d} Progress = %{:f},"
-                          " Batch #{:d} ===> Loss = ".format(eta_read, eta_learn, epoch, n_epochs,
+                    print(" ###INFO: ETA: read:{:.2f}s, train:{:.2f}s, Epoch {:d}/{:d} Progress = %{:.1f},"
+                          " Batch #{:d} => Loss = ".format(eta_read, eta_learn, epoch, n_epochs,
                                                              100*idx/n_batch, idx), history[1])
 
                     # Keep the track of loss
@@ -205,8 +205,8 @@ if __name__ == '__main__':
     parser.add_argument('--lr', type=float, default=0.00001, help='Learning Rate.')
     args = parser.parse_args()
 
-    # Proprocess dataset and save it to a new directory as new_dataset_small
-    data_generator.build_new_dataset(original_dataset_path)
+    # # Proprocess dataset and save it to a new directory as new_dataset_small
+    # data_generator.build_new_dataset(original_dataset_path)
 
     # Run the training
     main(args, checkpoints_path)
