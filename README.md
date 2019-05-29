@@ -66,7 +66,8 @@ $python3 VOS_evaluate.py --batch_size=<size of the mini batch> --scenario-name=<
 
 ## Notes:
 The model typically converges after 80 epochs with learning rate of 1e-5, the loss function is typically similar to the picture below:
-![Loss History](/utils/loss_history.png?raw=true "Optional Title")
+![Loss History](/utils/loss_history.png?raw=true "Loss history for each iteration on mini batches of data")
+![Loss History](/utils/loss_history_epoch.png?raw=true "Loss history averaged over each epoch")
 
 
 
