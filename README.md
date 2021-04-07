@@ -11,6 +11,12 @@ our results have been submitted to the leaderboard of the 2018 challenge:
 
 https://competitions.codalab.org/competitions/19544#results
 
+## Sample Results:
+### Input frame:
+![input](/utils/00005.jpg?raw=true "Input")
+### Network Output:
+![output](/utils/00005.png?raw=true "Output")
+
 ## Run Instructions:
 ### System Requirements:
 The script is written in Python 3.5.2 and TensorFlow 1.13.1 for GPU, CPU operation might be possible but is not tested.
