@@ -1,10 +1,6 @@
 # Sequence-to-Sequence Video Object Segmentation
 An end-to-end trainable model for object segmentation using convolutional LSTM and VGG-16 Architecture.
 
-### Abstract:
-This is an implementation of the method based on Conv-LSTM and Encoder-Decoder architecture proposed in:
-
-https://arxiv.org/abs/1809.00461 
 
 ### Youtube-VOS dataset:
 YouTube-VOS is the first large-scale benchmark that supports multiple video object segmentation tasks. with4000+ high-resolution YouTube videos. It can be downloaded from:
@@ -70,5 +66,9 @@ The model typically converges after 80 epochs with learning rate of 1e-5, the lo
 ![Loss History](/utils/loss_history_epoch.png?raw=true "Loss history averaged over each epoch")
 
 
+### Reference:
+This is an implementation of the method based on Conv-LSTM and Encoder-Decoder architecture proposed in:
+
+https://arxiv.org/abs/1809.00461 
 
 
